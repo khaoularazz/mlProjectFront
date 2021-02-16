@@ -1,0 +1,77 @@
+<section style="background-color: #ededed" class="pb-5">
+  <div class="ee edge-header "></div>
+
+  <!-- Main Container -->
+  <div class="container free-bird">
+    <div class="row">
+      <div class="col-md-8 col-lg-7 mx-auto float-none white z-depth-1 py-2 px-2">
+        <!--Naked Form-->
+        <div class="card-body">
+          <div class="h2 text-center">Les Techniques NLP</div>
+          <!--Body-->
+          <form action="#">
+            <!--Textarea with icon-->
+            <!--Basic textarea-->
+            <div class="md-form mb-4 pink-textarea active-pink-textarea-2">
+              <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+              <textarea id="form17" [(ngModel)]="txt" name="txt" id="txt" class="md-textarea form-control"
+                placeholder=" Placez Votre Text Ici" rows="5"></textarea>
+              <br />
+              <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button mdbBtn type="button" color="default" size="sm" (click)="onTokenize()" class="waves-light"
+                  mdbWavesEffect>Tokenization</button>
+                <button mdbBtn type="button" color="default" size="sm" (click)="onStopwords()" class="waves-light" mdbWavesEffect>Stop
+                  words</button>
+                <button mdbBtn type="button" color="default" size="sm" (click)="onLemmatization()" class="waves-light"
+                  mdbWavesEffect>Lemmatization</button>
+                <button mdbBtn type="button" color="default" size="sm" (click)="onStemming()" class="waves-light"
+                  mdbWavesEffect>stemming</button>
+                <button mdbBtn type="button" color="default" size="sm" (click)="onPos()" class="waves-light"
+                  mdbWavesEffect>Pos Tagging</button>
+              </div>
+              <div>
+                <button mdbBtn style="margin-left: 3.5cm " type="button" size="sm" color="default" class="waves-light"
+                  mdbWavesEffect>Word2Vec</button>
+                <button mdbBtn type="button" size="sm" color="default" (click)="onBagofwords()" class="waves-light" mdbWavesEffect>bag of
+                  words</button>
+                <button mdbBtn type="button" size="sm" color="default" (click)="onTfidf()" class="waves-light"
+                  mdbWavesEffect>TF-IDF</button>
+              </div>
+
+            </div>
+            <!--Basic textarea-->
+            <mdb-icon fas icon="file-alt" class="prefix"></mdb-icon><div class="md-form amber-textarea active-amber-textarea-2">
+              
+              <div id="form16" disabled class="md-textarea form-control" rows="5">
+                <div *ngIf="nlp===1" >   
+                <p style="margin-left: 6%;" *ngFor="let mm of result ;let i = index" > 
+                            <span *ngIf="i%2==0" > {{result[i]}}  :  {{result[i+1]}} </span>
+                             </p>
+                        </div> 
+                        <div *ngIf="nlp===0" >   
+                          <span style="margin-left: 6%;" *ngFor="let mm of result ;let i = index" > 
+                                ' {{mm}}' , 
+                          </span>
+                        </div> 
+                        <div *ngIf="nlp===2" >   
+                          <span style="margin-left: 6%;" *ngFor="let mm of result ;let i = index" > 
+                                {{mm}} 
+                          </span>
+                        </div> 
+                      
+                            </div>
+
+            </div>
+
+          </form>
+
+
+
+        </div>
+        <!--Naked Form-->
+
+      </div>
+    </div>
+  </div>
+  <!-- /.Main Container -->
+</section>

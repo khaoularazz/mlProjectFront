@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   
+<body class="hm-gradient">
+    
+
+    
+    <main>
+        
+        <!--MDB Forms-->
+        <div class="container mt-4">
+            
+          
+            <div class="row">
+             
+                <div class="col-md-6 mb-4">
+                    <div class="card near-moon-gradient form-white">
+                        <div class="cc card-body">
+                            <!-- Form subscription -->
+                            <form class="pt-3" (ngSubmit) = "onSubmit()">
+                                <div class="h2 text-center">Registration</div>
+                                <div class="md-form">
+                                    <i class="fa fa-user prefix white-text"></i>
+                                    <input type="text" id="form35" placeholder="Your  first name" class="form-control"  [(ngModel)] = "cl.prenom"  name = "prenom" id= "prenom">
+                                 
+                                </div>
+                                   <div class="md-form">
+                                    <i class="fa fa-user prefix white-text"></i>
+                                    <input type="text" id="form35" placeholder="Your last name" class="form-control"  [(ngModel)] = "cl.nom"  name = "nom" id= "nom">
+                                    
+                                </div>
+                                 <div class="md-form">
+                                    <i class="fa fa-envelope prefix white-text"></i>
+                                    <input type="text" placeholder="Your email" id="orangeForm-email2" class="form-control"  [(ngModel)] = "cl.email"  name = "email" id= "email">
+                                    
+                                </div>
+                               <div class="md-form">
+                                    <i class="fa fa-lock prefix white-text"></i>
+                                    <input type="password" placeholder="Your password" id="orangeForm-pass2" class="form-control" [(ngModel)] = "cl.password"  name = "password" id= "password">
+                                  
+                                </div>
+                                <div class="text-center py-4">
+                                    <button class=" bb btn btn-indigo"> Signe up <i class="fa fa-paper-plane-o ml-1"></i></button>
+                                </div>
+                            </form>
+                            <!-- Form subscription -->
+                        </div>
+                    </div>
+                </div>
+                 </div>
+                      </div>
+ 
+      
+    </main>

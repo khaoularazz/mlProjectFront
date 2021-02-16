@@ -1,0 +1,51 @@
+
+<!--Navbar-->
+
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark default-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        
+        <a class="nav-link waves-light" mdbWavesEffect  style="font-size: 27px;" active="tru"routerLink="/Home"> Home <mdb-icon fas icon="home"></mdb-icon><span class="caret"></span><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" *ngIf='loggedin' style="font-size: 27px;" routerLink="/Articles"  mdbWavesEffect>Articles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" *ngIf='loggedin' style="font-size: 27px;" routerLink="/NLPServices" mdbWavesEffect>Techniques Nlp</a>
+      </li>
+
+     
+
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+     
+  
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user"></mdb-icon><span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" *ngIf='!loggedin' mdbWavesEffect routerLink="/Login">Login</a>
+          <a class="dropdown-item waves-light" *ngIf='loggedin' mdbWavesEffect routerLink="/Login" (click)="logout()">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+
+
+
+<!--/.Navbar-->
+<router-outlet></router-outlet>

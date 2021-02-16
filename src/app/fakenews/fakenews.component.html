@@ -1,0 +1,53 @@
+
+    <div class="col-md-8 col-lg-7 mx-auto float-none white z-depth-1 py-2 px-2" style="margin-top: 3em;">
+    <div class="card-body">
+        <form (ngSubmit) ="btn_article_post(text)">
+        <textarea class="form-control" style=" font-size: 25px ;" [(ngModel)] = "text" name="text" rows="5"
+            placeholder="Add new Article"></textarea>
+            
+              <button mdbBtn type="button" style="font-size:20px ; margin-left:85% " color="default" size="sm" (click)='btn_article_post(text);' class="waves-light"
+            mdbWavesEffect>post</button>
+        </form>
+    </div>
+</div>
+<hr />
+<div *ngFor="let cmts of articles.slice().reverse(); let i=index"  style="border-color: #04B4AE;" class="col-md-8 col-lg-7 mx-auto float-none white z-depth-1 py-2 px-2" style="margin-top: 3em;">
+    <div style="border-color: #04B4AE;"  class="card-body">
+
+        <div class="card-header" style="background-color: rgb(255, 255, 255);border-color: #04B4AE; font-size: 25px ; ">{{cmts.username}}
+            <span *ngIf="cmts.textstate===0" style="float: right; color: red;" > <span class="material-icons"> gpp_maybe</span>Fake news</span>
+              <span *ngIf="cmts.textstate===1" style="float: right; color:green;" > <span class="material-icons">gpp_good </span>real news</span>
+            </div>
+        <div class="card-header " style="background-color: rgb(255, 255, 255);border-color: #04B4AE; border-bottom: 1cm; ">
+
+            <p class="card-text" style="font-size: 20px;" > {{cmts.text}}</p>
+           
+            
+
+        </div>
+        <div class="card-body " style="background-color: white;">
+            <details>
+                <summary style="padding:1em;">{{cmts.comments.length}} comments</summary>
+              <div *ngFor="let kiki of cmts.comments;let i = index ">
+                <span  class="title" style="background-color: white;">
+                    <p style="background-color: white; margin-left: 3%;">    {{kiki}} <span *ngIf="cmts.state[i]===1" style="float: right;" >😃</span>  <span *ngIf="cmts.state[i]===0" style="float: right;" >☹️</span></p>
+                   
+               
+                    </span> <hr/>
+                  </div>
+            </details>
+            
+            <form (ngSubmit) ="btn_post(cmts.id , value[cmts.id])">
+                <div class="input-group"> 
+              
+                    <input type="text" [(ngModel)] = "value[cmts.id]" style="width: 15cm; size: 2mm" name = "nom" class="form-control" id="exampleInputEmail1" placeholder="Add a comment">
+                
+                <button class="btn btn-success" style="size: 1mm; background-color: white; border-color: white; color: #04B4AE;"  class="fad fa-paper-plane" ng-click='btn_post();'><span class="material-icons">
+                    send
+                    </span></button>
+                </div>
+            </form></div>
+        
+    </div>
+</div>
+<hr />
