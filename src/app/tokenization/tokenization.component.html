@@ -17,7 +17,7 @@
               <textarea id="form17" [(ngModel)]="txt" name="txt" id="txt" class="md-textarea form-control"
                 placeholder=" Placez Votre Text Ici" rows="5"></textarea>
               <br />
-              <div class="btn-group mr-2" role="group" aria-label="First group">
+              <div style="text-align: center;" class="btn-group mr-2" role="group" aria-label="First group">
                 <button mdbBtn type="button" color="default" size="sm" (click)="onTokenize()" class="waves-light"
                   mdbWavesEffect>Tokenization</button>
                 <button mdbBtn type="button" color="default" size="sm" (click)="onStopwords()" class="waves-light" mdbWavesEffect>Stop
@@ -29,9 +29,8 @@
                 <button mdbBtn type="button" color="default" size="sm" (click)="onPos()" class="waves-light"
                   mdbWavesEffect>Pos Tagging</button>
               </div>
-              <div>
-                <button mdbBtn style="margin-left: 3.5cm " type="button" size="sm" color="default" class="waves-light"
-                  mdbWavesEffect>Word2Vec</button>
+              <div style="text-align: center;">
+             
                 <button mdbBtn type="button" size="sm" color="default" (click)="onBagofwords()" class="waves-light" mdbWavesEffect>bag of
                   words</button>
                 <button mdbBtn type="button" size="sm" color="default" (click)="onTfidf()" class="waves-light"

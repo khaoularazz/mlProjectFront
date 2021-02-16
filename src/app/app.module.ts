@@ -10,7 +10,6 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {FormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
-import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 import { MatNativeDateModule , MatDatepickerModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { FakenewsComponent } from './fakenews/fakenews.component';
@@ -37,7 +36,6 @@ export function createApollo(httpLink: HttpLink) {
     LoginComponent,
     RegistrationComponent,
 
-    RendezVousComponent,
     HomeComponent,
     FakenewsComponent,
     TokenizationComponent,

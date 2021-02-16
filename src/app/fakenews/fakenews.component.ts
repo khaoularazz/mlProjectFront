@@ -29,21 +29,17 @@ export class FakenewsComponent implements OnInit {
   @Input() nom: string;
 
   articles: article[]=[];
-  //comment :boolean=false;
+
   value:any=[]
-  hh=0;
+  //hh=0;
  	constructor(private apollo: Apollo,private router : Router)  {
-   // this.nom =  this.router.getCurrentNavigation().extras.state.firstName;
+  
     this.nom=localStorage.getItem('firstName');
     this.nom=this.nom+" "+localStorage.getItem('lastName');
     console.log(this.nom)
    }
 
   ngOnInit() {
-    
-
-
-
     this.apollo.query({
       query: gql`
       query {
@@ -68,19 +64,6 @@ export class FakenewsComponent implements OnInit {
 
   }
   btn_post(b: any , bb:any){
-    
-   /* this.comment=true
-
-    console.log(b);
-    if(b=="lokmlkuh1")
-    this.comments.push(bb);
-    if(b=="ffffjknh54")
-    this.comments1.push(bb);
-    if(b=="3ilnjlk,f54f")
-    this.comments2.push(bb);
-    
-    bb='';
-    this.hh=this.comments.length*/
 this.id=b;
 this.comment=bb;
     this.apollo.mutate({
@@ -135,18 +118,6 @@ this.comment=bb;
   }
   btn_article_post(text: any ){
     this.text=text;
-    /* this.comment=true
- 
-     console.log(b);
-     if(b=="lokmlkuh1")
-     this.comments.push(bb);
-     if(b=="ffffjknh54")
-     this.comments1.push(bb);
-     if(b=="3ilnjlk,f54f")
-     this.comments2.push(bb);
-     
-     bb='';
-     this.hh=this.comments.length*/
      this.nom=localStorage.getItem('firstName');
     this.nom=this.nom+" "+localStorage.getItem('lastName');
  console.log(text);
