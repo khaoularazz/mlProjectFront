@@ -5,6 +5,7 @@ import { HttpLink } from 'apollo-angular-link-http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ClientService } from '../client.service';
 type article = {
   id: string;
   text: string;
@@ -32,14 +33,14 @@ export class FakenewsComponent implements OnInit {
 
   value:any=[]
   //hh=0;
- 	constructor(private apollo: Apollo,private router : Router)  {
-  
+ 	constructor(private clientService: ClientService,private apollo: Apollo,private router : Router)  {
     this.nom=localStorage.getItem('firstName');
     this.nom=this.nom+" "+localStorage.getItem('lastName');
     console.log(this.nom)
    }
 
   ngOnInit() {
+    this.clientService.navigate() 
     this.apollo.query({
       query: gql`
       query {

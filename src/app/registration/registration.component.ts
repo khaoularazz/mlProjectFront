@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.clientService.navigate() 
   } 
   onSubmit(){
     console.log(this.cl);
@@ -95,7 +95,7 @@ export class RegistrationComponent implements OnInit {
            localStorage.setItem("lastName" , this.cl.nom)
        localStorage.setItem("firstName" , this.cl.prenom)
        this.clientService.loginAdmin(this.cl)
-          this.router.navigate(['/Articles'])
+          this.router.navigate(['/Home'])
     
       }  }),
         error => console.log(error);

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+    this.clientService.navigate() 
   }
   
   
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
        localStorage.setItem("firstName" , this.user.firstName)
        localStorage.setItem("lastName" , this.user.lastName)
        this.clientService.loginAdmin(this.cl)
-      this.router.navigate(['/Articles'] , { state: {firstName : this.user.firstName }});
+      this.router.navigate(['/Home'] , { state: {firstName : this.user.firstName }});
 
   }  })
 

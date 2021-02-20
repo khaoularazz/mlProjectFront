@@ -5,6 +5,7 @@ import { Apollo, QueryRef } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { ClientService } from '../client.service';
 type text = {
   text: string;
   result: [];
@@ -21,9 +22,11 @@ result:[];
 nlp: number;
 @Input() txt:string
  
-  constructor(private apollo: Apollo) { }
+  constructor(private clientService: ClientService,private apollo: Apollo) { }
 
   ngOnInit() {
+    
+    this.clientService.navigate() 
   }
 onTokenize(){
   this.nlp=0;

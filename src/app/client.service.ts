@@ -7,7 +7,7 @@ import { Client } from './client';
   providedIn: 'root'
 })
 export class ClientService {
-
+  public v = new Subject<boolean>();
   public l=new Subject<boolean>();
 
   constructor(private httpClient : HttpClient) { }
@@ -23,7 +23,9 @@ export class ClientService {
   
   }
  
-
+  navigate(){
+    this.v.next(false)
+  }
 
 
 }
